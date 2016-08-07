@@ -7,7 +7,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -46,8 +45,8 @@ public class JMeterSummary {
 
 	private static final int DEFAULT_MILLIS_BUCKET = 500;
 
-	protected final File _jmeterOutput;
-	protected final int _millisPerBucket;
+	private final File _jmeterOutput;
+	private final int _millisPerBucket;
 
 	/**
 	 */
@@ -88,14 +87,14 @@ public class JMeterSummary {
 
 	/**
 	 */
-	public static void printUsage() {
+	private static void printUsage() {
 		System.out.println("Usage: " + JMeterSummary.class.getName() + " <JMeter Ouput File> [Millis Per Bucket]");
 		System.out.println("  (By default hits are grouped in " + DEFAULT_MILLIS_BUCKET + " millis/bucket.)");
 	}
 
 	/**
 	 */
-	public JMeterSummary(File inJmeterOutput, int inMillisPerBucket) {
+	private JMeterSummary(File inJmeterOutput, int inMillisPerBucket) {
 		super();
 		_jmeterOutput = inJmeterOutput;
 		_millisPerBucket = inMillisPerBucket;
@@ -103,14 +102,14 @@ public class JMeterSummary {
 
 	/**
 	 */
-	public void run() throws IOException {
+	private void run() throws IOException {
 		Totals totalAll = new Totals();
-		Map<String, Totals> totalUrlMap = new HashMap<String, Totals>(); // key = url, value = total
+		Map<String, Totals> totalUrlMap = new HashMap<>(); // key = url, value = total
 
 		Pattern p = Pattern.compile(REG_EX);
 
-		BufferedReader inStream = new BufferedReader(new FileReader(_jmeterOutput));
-		try {
+
+		try (BufferedReader inStream = new BufferedReader(new FileReader(_jmeterOutput))) {
 			String line = inStream.readLine();
 			while (line != null) {
 				Matcher m = p.matcher(line);
@@ -130,8 +129,6 @@ public class JMeterSummary {
 				line = inStream.readLine();
 			}
 
-		} finally {
-			inStream.close();
 		}
 
 		if (totalAll.count == 0) {
@@ -144,10 +141,9 @@ public class JMeterSummary {
 		System.out.println(totalAll.toAdvancedString());
 		System.out.println("");
 
-		Iterator iter = totalUrlMap.entrySet().iterator();
-		while (iter.hasNext()) {
+		for (Object o : totalUrlMap.entrySet()) {
 
-			Map.Entry entry = (Map.Entry) iter.next();
+			Map.Entry entry = (Map.Entry) o;
 			String url = (String) entry.getKey();
 			Totals totals = (Totals) entry.getValue();
 
@@ -178,16 +174,16 @@ public class JMeterSummary {
 		String rc = inM.group(GROUP_RC);
 		Integer count = inTotal.rcMap.get(rc);
 		if (count == null) {
-			count = new Integer(0);
+			count = 0;
 		}
-		inTotal.rcMap.put(rc, new Integer(count.intValue() + 1));
+		inTotal.rcMap.put(rc, count + 1);
 
-		Integer bucket = new Integer(time / _millisPerBucket);
+		Integer bucket = time / _millisPerBucket;
 		count = inTotal.millisMap.get(bucket);
 		if (count == null) {
-			count = new Integer(0);
+			count = 0;
 		}
-		inTotal.millisMap.put(bucket, new Integer(count.intValue() + 1));
+		inTotal.millisMap.put(bucket, count + 1);
 
 		if (!inM.group(GROUP_S).equalsIgnoreCase("true")) {
 			inTotal.failures++;
@@ -201,36 +197,35 @@ public class JMeterSummary {
 		private static final String DECIMAL_PATTERN = "#,##0.0##";
 		private static final double MILLIS_PER_SECOND = 1000.0;
 
-		public int count = 0;
-		public int total_t = 0;
-		public int max_t = 0; // will choose largest
-		public int min_t = Integer.MAX_VALUE; // will choose smallest
-		public int total_conn = 0;
-		public int max_conn = 0;  // will choose largest
-		public int min_conn = Integer.MAX_VALUE; // will choose smallest
-		public int failures = 0;
-		public long first_ts = Long.MAX_VALUE; // will choose smallest
-		public long last_ts = 0;  // will choose largest
-		public Map<String, Integer> rcMap = new HashMap<String, Integer>(); // key rc, value count
-		public Map<Integer, Integer> millisMap = new TreeMap<Integer, Integer>(); // key bucket Integer, value count
+		int count = 0;
+		int total_t = 0;
+		int max_t = 0; // will choose largest
+		int min_t = Integer.MAX_VALUE; // will choose smallest
+		int total_conn = 0;
+		int max_conn = 0;  // will choose largest
+		int min_conn = Integer.MAX_VALUE; // will choose smallest
+		int failures = 0;
+		long first_ts = Long.MAX_VALUE; // will choose smallest
+		long last_ts = 0;  // will choose largest
+		final Map<String, Integer> rcMap = new HashMap<>(); // key rc, value count
+		final Map<Integer, Integer> millisMap = new TreeMap<>(); // key bucket Integer, value count
 
-		public Totals() {
+		Totals() {
 		}
 
-		public String toBasicString() {
+		String toBasicString() {
 
 			DecimalFormat df = new DecimalFormat(DECIMAL_PATTERN);
 
-			List<String> millisStr = new LinkedList<String>();
+			List<String> millisStr = new LinkedList<>();
 
-			Iterator iter = millisMap.entrySet().iterator();
-			while (iter.hasNext()) {
-				Map.Entry millisEntry = (Map.Entry) iter.next();
+			for (Object o : millisMap.entrySet()) {
+				Map.Entry millisEntry = (Map.Entry) o;
 				Integer bucket = (Integer) millisEntry.getKey();
 				Integer bucketCount = (Integer) millisEntry.getValue();
 
-				int minMillis = bucket.intValue() * _millisPerBucket;
-				int maxMillis = (bucket.intValue() + 1) * _millisPerBucket;
+				int minMillis = bucket * _millisPerBucket;
+				int maxMillis = (bucket + 1) * _millisPerBucket;
 
 				millisStr.add(
 						df.format(minMillis / MILLIS_PER_SECOND) + " s " +
@@ -250,7 +245,7 @@ public class JMeterSummary {
 
 		} // end [Totals.toString()]
 
-		public String toAdvancedString() {
+		String toAdvancedString() {
 			double secondsElaspsed = (last_ts - first_ts) / MILLIS_PER_SECOND;
 			long countPerSecond = Math.round(count / secondsElaspsed);
 
