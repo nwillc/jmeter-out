@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -211,8 +212,8 @@ public class JMeterSummary {
 	 * @author Andres.Galeano@Versatile.com
 	 */
 	private class Totals {
-		private static final String DECIMAL_PATTERN = "#,##0.0##";
-		private static final double MILLIS_PER_SECOND = 1000.0;
+		private final String DECIMAL_PATTERN = "#,##0.0##";
+		private final double MILLIS_PER_SECOND = TimeUnit.SECONDS.toMillis(1);
 
 		int count = 0;
 		int total_t = 0;
@@ -260,7 +261,7 @@ public class JMeterSummary {
 							"failures: " + failures + ", " +
 							"cnt by time: " + millisStr + "";
 
-		} // end [Totals.toString()]
+		}
 
 		String toAdvancedString() {
 			double secondsElaspsed = (last_ts - first_ts) / MILLIS_PER_SECOND;
@@ -274,6 +275,6 @@ public class JMeterSummary {
 							"cnt per second: " + countPerSecond;
 		}
 
-	} // end [class Totals]
+	}
 
-} // end [class JMeterSummary]
+}
