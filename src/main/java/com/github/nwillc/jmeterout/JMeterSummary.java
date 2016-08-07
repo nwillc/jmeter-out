@@ -36,30 +36,30 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  * @author Andres.Galeano@Versatile.com
  */
 public class JMeterSummary {
-
+	private enum Group {
+		ALL,
+		T,
+		LT,
+		TS,
+		S,
+		LB,
+		RC,
+		RM,
+		TN,
+		DT
+	}
 	private static final String REG_EX =
-			"<httpSample\\s*" + // Start element
-					"t=\"([^\"]*)\"\\s*" + // GROUP_T
-					"lt=\"([^\"]*)\"\\s*" + // GROUP_LT
-					"ts=\"([^\"]*)\"\\s*" + // GROUP_TS
-					"s=\"([^\"]*)\"\\s*" + // GROUP_S
-					"lb=\"([^\"]*)\"\\s*" + // GROUP_LB
-					"rc=\"([^\"]*)\"\\s*" + // GROUP_RC
-					"rm=\"([^\"]*)\"\\s*" + // GROUP_RM
-					"tn=\"([^\"]*)\"\\s*" + // GROUP_TN
-					"dt=\"([^\"]*)\"\\s*" + // GROUP_DT
-					"/>"; // Finish element
-
-	private static final int GROUP_ALL = 0;
-	private static final int GROUP_T = 1;
-	private static final int GROUP_LT = 2;
-	private static final int GROUP_TS = 3;
-	private static final int GROUP_S = 4;
-	private static final int GROUP_LB = 5;
-	private static final int GROUP_RC = 6;
-	private static final int GROUP_RM = 7;
-	private static final int GROUP_TN = 8;
-	private static final int GROUP_DT = 9;
+			"<httpSample\\s*" +
+					"t=\"([^\"]*)\"\\s*" + // Group.T
+					"lt=\"([^\"]*)\"\\s*" + // Group.LT
+					"ts=\"([^\"]*)\"\\s*" + // Group.TS
+					"s=\"([^\"]*)\"\\s*" + // Group.S
+					"lb=\"([^\"]*)\"\\s*" + // Group.LB
+					"rc=\"([^\"]*)\"\\s*" + // Group.RC
+					"rm=\"([^\"]*)\"\\s*" + // Group.RM
+					"tn=\"([^\"]*)\"\\s*" + // Group.TN
+					"dt=\"([^\"]*)\"\\s*" + // Group.DT
+					"/>";
 
 	private static final int DEFAULT_MILLIS_BUCKET = 500;
 
@@ -135,7 +135,7 @@ public class JMeterSummary {
 				if (m.find()) {
 					add(m, totalAll);
 
-					String url = m.group(GROUP_LB);
+					String url = m.group(Group.LB.ordinal());
 					Totals urlTotals = totalUrlMap.get(url);
 					if (urlTotals == null) {
 						urlTotals = new Totals();
@@ -169,27 +169,27 @@ public class JMeterSummary {
 			System.out.println(totals.toBasicString());
 			System.out.println("");
 		}
-	} // end [run()]
+	}
 
 	/**
 	 */
 	private void add(Matcher inM, Totals inTotal) {
 		inTotal.count++;
-		long timeStamp = Long.parseLong(inM.group(GROUP_TS));
+		long timeStamp = Long.parseLong(inM.group(Group.TS.ordinal()));
 		inTotal.last_ts = Math.max(inTotal.last_ts, timeStamp);
 		inTotal.first_ts = Math.min(inTotal.first_ts, timeStamp);
 
-		int time = Integer.parseInt(inM.group(GROUP_T));
+		int time = Integer.parseInt(inM.group(Group.T.ordinal()));
 		inTotal.total_t += time;
 		inTotal.max_t = Math.max(inTotal.max_t, time);
 		inTotal.min_t = Math.min(inTotal.min_t, time);
 
-		int conn = time - Integer.parseInt(inM.group(GROUP_LT));
+		int conn = time - Integer.parseInt(inM.group(Group.LT.ordinal()));
 		inTotal.total_conn += conn;
 		inTotal.max_conn = Math.max(inTotal.max_conn, conn);
 		inTotal.min_conn = Math.min(inTotal.min_conn, conn);
 
-		String rc = inM.group(GROUP_RC);
+		String rc = inM.group(Group.RC.ordinal());
 		Integer count = inTotal.rcMap.get(rc);
 		if (count == null) {
 			count = 0;
@@ -203,10 +203,10 @@ public class JMeterSummary {
 		}
 		inTotal.millisMap.put(bucket, count + 1);
 
-		if (!inM.group(GROUP_S).equalsIgnoreCase("true")) {
+		if (!inM.group(Group.S.ordinal()).equalsIgnoreCase("true")) {
 			inTotal.failures++;
 		}
-	} // end [add(Matcher, Totals)]
+	}
 
 	/**
 	 * @author Andres.Galeano@Versatile.com
