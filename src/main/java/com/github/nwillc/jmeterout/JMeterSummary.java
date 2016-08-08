@@ -116,7 +116,7 @@ public class JMeterSummary {
             return;
         }
 
-        System.out.println("request, cnt, min, max, avg, 95th, failures, threads");
+        System.out.println("Request, Threads, Tot Req, Min, Max, Avg, 95th, Errors");
 
         requestMap.values().forEach(System.out::println);
     }

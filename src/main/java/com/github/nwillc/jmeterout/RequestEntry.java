@@ -41,12 +41,12 @@ class RequestEntry {
     public String toString() {
         Collections.sort(times);
         return new StringBuilder().append(url).append(COMMA)
+                .append(threads).append(COMMA)
                 .append(times.size()).append(COMMA)
                 .append(times.get(0)).append(", ")
                 .append(times.get(times.size() - 1)).append(COMMA)
                 .append(avg(times)).append(COMMA)
                 .append(percentile(times, 95)).append(COMMA)
-                .append(failures).append(COMMA)
-                .append(threads).toString();
+                .append(failures).toString();
     }
 }
