@@ -25,9 +25,7 @@ import org.apache.commons.math3.stat.descriptive.moment.StandardDeviation;
 import org.apache.commons.math3.stat.descriptive.rank.Max;
 import org.apache.commons.math3.stat.descriptive.rank.Min;
 import org.apache.commons.math3.stat.descriptive.rank.Percentile;
-import org.apache.commons.math3.util.Precision;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -66,7 +64,7 @@ class RequestEntry {
                 .append((int) min.evaluate(doubles, 0, doubles.length)).append(COMMA)
                 .append((int) max.evaluate(doubles, 0, doubles.length)).append(COMMA)
                 .append((int) mean.evaluate(doubles, 0, doubles.length)).append(COMMA)
-                .append(round(std.evaluate(doubles,0, doubles.length),3)).append(COMMA)
+                .append(round(std.evaluate(doubles, 0, doubles.length), 3)).append(COMMA)
                 .append((int) percentile.evaluate(doubles, 95.0)).append(COMMA)
                 .append(failures).toString();
     }
