@@ -1,14 +1,7 @@
 package com.github.nwillc.jmeterout;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.DecimalFormat;
+import java.io.*;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
@@ -16,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /*
-			Copyright (c) 2016, nwillc@gmail.com
+            Copyright (c) 2016, nwillc@gmail.com
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
@@ -36,60 +29,60 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  * @author Andres.Galeano@Versatile.com
  */
 public class JMeterSummary {
-	private enum Group {
-		ALL,
-		T,
-		LT,
-		TS,
-		S,
-		LB,
-		RC,
-		RM,
-		TN,
-		DT,
-		BY
-	}
+    private enum Group {
+        ALL,
+        T,
+        LT,
+        TS,
+        S,
+        LB,
+        RC,
+        RM,
+        TN,
+        DT,
+        BY
+    }
 
-	private static final int DEFAULT_MILLIS_BUCKET = 500;
+    private static final int DEFAULT_MILLIS_BUCKET = 500;
 
-	private final File _jmeterOutput;
-	private final int _millisPerBucket;
+    private final File _jmeterOutput;
+    private final int _millisPerBucket;
 
-	/**
-	 */
-	public static void main(String args[]) {
-		try {
-			int millisPerBucket;
+    /**
+     */
+    public static void main(String args[]) {
+        try {
+            int millisPerBucket;
 
-			int argIndex = 0;
+            int argIndex = 0;
 
-			if (args.length < 1) {
-				printUsage();
-				throw new IllegalArgumentException("Must provide a JMeter output file as an argument.");
-			}
+            if (args.length < 1) {
+                printUsage();
+                throw new IllegalArgumentException("Must provide a JMeter output file as an argument.");
+            }
 
-			String arg0 = args[argIndex++];
-			if (arg0.contains("help")) {
-				printUsage();
-				return;
-			}
+            String arg0 = args[argIndex++];
+            if (arg0.contains("help")) {
+                printUsage();
+                return;
+            }
 
-			File outputFile = new File(arg0);
-			if (!outputFile.exists()) {
-				throw new FileNotFoundException("File '" + outputFile + "' does not exist.");
-			}
+            File outputFile = new File(arg0);
+            if (!outputFile.exists()) {
+                throw new FileNotFoundException("File '" + outputFile + "' does not exist.");
+            }
 
-			if (args.length > argIndex) {
-				millisPerBucket = Integer.parseInt(args[argIndex++]);
-			} else {
-				millisPerBucket = DEFAULT_MILLIS_BUCKET;
-			}
-			JMeterSummary instance = new JMeterSummary(outputFile, millisPerBucket);
-			instance.run();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
+            if (args.length > argIndex) {
+                millisPerBucket = Integer.parseInt(args[argIndex++]);
+            } else {
+                millisPerBucket = DEFAULT_MILLIS_BUCKET;
+            }
+            JMeterSummary instance = new JMeterSummary(outputFile, millisPerBucket);
+            instance.run();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 
     private static String createRegex() {
         StringBuilder stringBuilder = new StringBuilder("<httpSample\\s*");
@@ -107,178 +100,120 @@ public class JMeterSummary {
         return stringBuilder.toString();
     }
 
-	/**
-	 */
-	private static void printUsage() {
-		System.out.println("Usage: " + JMeterSummary.class.getName() + " <JMeter Ouput File> [Millis Per Bucket]");
-		System.out.println("  (By default hits are grouped in " + DEFAULT_MILLIS_BUCKET + " millis/bucket.)");
-	}
+    /**
+     */
+    private static void printUsage() {
+        System.out.println("Usage: " + JMeterSummary.class.getName() + " <JMeter Ouput File> [Millis Per Bucket]");
+        System.out.println("  (By default hits are grouped in " + DEFAULT_MILLIS_BUCKET + " millis/bucket.)");
+    }
 
-	/**
-	 */
-	private JMeterSummary(File inJmeterOutput, int inMillisPerBucket) {
-		super();
-		_jmeterOutput = inJmeterOutput;
-		_millisPerBucket = inMillisPerBucket;
-	}
+    /**
+     */
+    private JMeterSummary(File inJmeterOutput, int inMillisPerBucket) {
+        super();
+        _jmeterOutput = inJmeterOutput;
+        _millisPerBucket = inMillisPerBucket;
+    }
 
-	/**
-	 */
-	private void run() throws IOException {
-		Totals totalAll = new Totals();
-		Map<String, Totals> totalUrlMap = new HashMap<>(); // key = url, value = total
+    /**
+     */
+    private void run() throws IOException {
+        Map<String, Totals> totalUrlMap = new HashMap<>(); // key = url, value = total
 
         Pattern p = Pattern.compile(createRegex());
 
 
-		try (BufferedReader inStream = new BufferedReader(new FileReader(_jmeterOutput))) {
-			String line = inStream.readLine();
-			while (line != null) {
-				Matcher m = p.matcher(line);
+        try (BufferedReader inStream = new BufferedReader(new FileReader(_jmeterOutput))) {
+            String line = inStream.readLine();
+            while (line != null) {
+                Matcher m = p.matcher(line);
 
-				if (m.find()) {
-					add(m, totalAll);
+                if (m.find()) {
+                    String url = m.group(Group.LB.ordinal());
+                    Totals urlTotals = totalUrlMap.get(url);
+                    if (urlTotals == null) {
+                        urlTotals = new Totals(url);
+                        totalUrlMap.put(url, urlTotals);
+                    }
+                    add(m, urlTotals);
+                }
 
-					String url = m.group(Group.LB.ordinal());
-					Totals urlTotals = totalUrlMap.get(url);
-					if (urlTotals == null) {
-						urlTotals = new Totals();
-						totalUrlMap.put(url, urlTotals);
-					}
-					add(m, urlTotals);
-				}
+                line = inStream.readLine();
+            }
 
-				line = inStream.readLine();
-			}
+        }
 
-		}
+        if (totalUrlMap.isEmpty()) {
+            System.out.println("No results found!");
+            return;
+        }
 
-		if (totalAll.count == 0) {
-			System.out.println("No results found!");
-			return;
-		}
+        System.out.println("url, cnt, avg, max, min, failures");
 
-		System.out.println("All Urls:");
-		System.out.println(totalAll.toBasicString());
-		System.out.println(totalAll.toAdvancedString());
-		System.out.println("");
+        totalUrlMap.values().forEach(System.out::println);
+    }
 
-		for (Object o : totalUrlMap.entrySet()) {
+    /**
+     */
+    private void add(Matcher inM, Totals inTotal) {
+        inTotal.count++;
+        long timeStamp = Long.parseLong(inM.group(Group.TS.ordinal()));
+        inTotal.last_ts = Math.max(inTotal.last_ts, timeStamp);
+        inTotal.first_ts = Math.min(inTotal.first_ts, timeStamp);
 
-			Map.Entry entry = (Map.Entry) o;
-			String url = (String) entry.getKey();
-			Totals totals = (Totals) entry.getValue();
+        int time = Integer.parseInt(inM.group(Group.T.ordinal()));
+        inTotal.total_t += time;
+        inTotal.max_t = Math.max(inTotal.max_t, time);
+        inTotal.min_t = Math.min(inTotal.min_t, time);
 
-			System.out.println("URL: " + url);
-			System.out.println(totals.toBasicString());
-			System.out.println("");
-		}
-	}
+        int conn = time - Integer.parseInt(inM.group(Group.LT.ordinal()));
+        inTotal.total_conn += conn;
+        inTotal.max_conn = Math.max(inTotal.max_conn, conn);
+        inTotal.min_conn = Math.min(inTotal.min_conn, conn);
 
-	/**
-	 */
-	private void add(Matcher inM, Totals inTotal) {
-		inTotal.count++;
-		long timeStamp = Long.parseLong(inM.group(Group.TS.ordinal()));
-		inTotal.last_ts = Math.max(inTotal.last_ts, timeStamp);
-		inTotal.first_ts = Math.min(inTotal.first_ts, timeStamp);
+        String rc = inM.group(Group.RC.ordinal());
+        Integer count = inTotal.rcMap.get(rc);
+        if (count == null) {
+            count = 0;
+        }
+        inTotal.rcMap.put(rc, count + 1);
 
-		int time = Integer.parseInt(inM.group(Group.T.ordinal()));
-		inTotal.total_t += time;
-		inTotal.max_t = Math.max(inTotal.max_t, time);
-		inTotal.min_t = Math.min(inTotal.min_t, time);
+        if (!inM.group(Group.S.ordinal()).equalsIgnoreCase("true")) {
+            inTotal.failures++;
+        }
+    }
 
-		int conn = time - Integer.parseInt(inM.group(Group.LT.ordinal()));
-		inTotal.total_conn += conn;
-		inTotal.max_conn = Math.max(inTotal.max_conn, conn);
-		inTotal.min_conn = Math.min(inTotal.min_conn, conn);
+    /**
+     * @author Andres.Galeano@Versatile.com
+     */
+    private class Totals {
+        final String url;
+        int count = 0;
+        int total_t = 0;
+        int max_t = 0; // will choose largest
+        int min_t = Integer.MAX_VALUE; // will choose smallest
+        int total_conn = 0;
+        int max_conn = 0;  // will choose largest
+        int min_conn = Integer.MAX_VALUE; // will choose smallest
+        int failures = 0;
+        long first_ts = Long.MAX_VALUE; // will choose smallest
+        long last_ts = 0;  // will choose largest
+        final Map<String, Integer> rcMap = new HashMap<>(); // key rc, value count
 
-		String rc = inM.group(Group.RC.ordinal());
-		Integer count = inTotal.rcMap.get(rc);
-		if (count == null) {
-			count = 0;
-		}
-		inTotal.rcMap.put(rc, count + 1);
+        Totals(String url) {
+            this.url = url;
+        }
 
-		Integer bucket = time / _millisPerBucket;
-		count = inTotal.millisMap.get(bucket);
-		if (count == null) {
-			count = 0;
-		}
-		inTotal.millisMap.put(bucket, count + 1);
+        @Override
+        public String toString() {
+            return  url + ", "  +
+                    count + ", " +
+                            (total_t / count) + ", " +
+                            max_t + ", " +
+                            min_t + ", " +
+                            failures;
 
-		if (!inM.group(Group.S.ordinal()).equalsIgnoreCase("true")) {
-			inTotal.failures++;
-		}
-	}
-
-	/**
-	 * @author Andres.Galeano@Versatile.com
-	 */
-	private class Totals {
-		private final String DECIMAL_PATTERN = "#,##0.0##";
-		private final double MILLIS_PER_SECOND = TimeUnit.SECONDS.toMillis(1);
-
-		int count = 0;
-		int total_t = 0;
-		int max_t = 0; // will choose largest
-		int min_t = Integer.MAX_VALUE; // will choose smallest
-		int total_conn = 0;
-		int max_conn = 0;  // will choose largest
-		int min_conn = Integer.MAX_VALUE; // will choose smallest
-		int failures = 0;
-		long first_ts = Long.MAX_VALUE; // will choose smallest
-		long last_ts = 0;  // will choose largest
-		final Map<String, Integer> rcMap = new HashMap<>(); // key rc, value count
-		final Map<Integer, Integer> millisMap = new TreeMap<>(); // key bucket Integer, value count
-
-		Totals() {
-		}
-
-		String toBasicString() {
-
-			DecimalFormat df = new DecimalFormat(DECIMAL_PATTERN);
-
-			List<String> millisStr = new LinkedList<>();
-
-			for (Object o : millisMap.entrySet()) {
-				Map.Entry millisEntry = (Map.Entry) o;
-				Integer bucket = (Integer) millisEntry.getKey();
-				Integer bucketCount = (Integer) millisEntry.getValue();
-
-				int minMillis = bucket * _millisPerBucket;
-				int maxMillis = (bucket + 1) * _millisPerBucket;
-
-				millisStr.add(
-						df.format(minMillis / MILLIS_PER_SECOND) + " s " +
-								"- " +
-								df.format(maxMillis / MILLIS_PER_SECOND) + " s " +
-								"= " + bucketCount);
-			}
-
-			return
-					"cnt: " + count + ", " +
-							"avg t: " + (total_t / count) + " ms, " +
-							"max t: " + max_t + " ms, " +
-							"min t: " + min_t + " ms, " +
-							"result codes: " + rcMap + ", " +
-							"failures: " + failures + ", " +
-							"cnt by time: " + millisStr + "";
-
-		}
-
-		String toAdvancedString() {
-			double secondsElaspsed = (last_ts - first_ts) / MILLIS_PER_SECOND;
-			long countPerSecond = Math.round(count / secondsElaspsed);
-
-			return
-					"avg conn: " + (total_conn / count) + " ms, " +
-							"max conn: " + max_conn + " ms, " +
-							"min conn: " + min_conn + " ms, " +
-							"elapsed seconds: " + Math.round(secondsElaspsed) + " s, " +
-							"cnt per second: " + countPerSecond;
-		}
-
-	}
+        }
+    }
 
 }
