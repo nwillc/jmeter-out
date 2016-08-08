@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="206" it="0" lt="205" ts="1470664262693" s="true" lb="ping" rc="200" rm="OK" tn="setup 1-1" dt="text" by="244" ng="1" na="1"/>
+<sample t="43360" it="0" lt="9145" ts="1470664262917" s="true" lb="symbols" rc="200" rm="OK" tn="setup 1-1" dt="text" by="559" ng="1" na="1"/>
+<httpSample t="1617" it="0" lt="1617" ts="1470664306376" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-1" dt="text" by="357" ng="5" na="5"/>
+<httpSample t="778" it="0" lt="778" ts="1470664307232" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-5" dt="text" by="368" ng="5" na="5"/>
+<httpSample t="1227" it="0" lt="1227" ts="1470664306815" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-3" dt="text" by="366" ng="5" na="5"/>
+<httpSample t="99" it="0" lt="99" ts="1470664307995" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="88" it="0" lt="87" ts="1470664308043" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="1118" it="0" lt="1118" ts="1470664307020" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-4" dt="text" by="377" ng="5" na="5"/>
+<httpSample t="92" it="0" lt="92" ts="1470664308096" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-1" dt="text" by="688" ng="5" na="5"/>
+<httpSample t="85" it="0" lt="85" ts="1470664308140" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="106" it="0" lt="106" ts="1470664308132" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-3" dt="text" by="700" ng="5" na="5"/>
+<httpSample t="91" it="0" lt="90" ts="1470664308226" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-4" dt="text" by="672" ng="5" na="5"/>
+<httpSample t="349" it="0" lt="349" ts="1470664308014" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="243" it="0" lt="243" ts="1470664308194" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-1" dt="text" by="1138" ng="5" na="5"/>
+<httpSample t="2165" it="0" lt="2165" ts="1470664306594" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-2" dt="text" by="355" ng="5" na="5"/>
+<httpSample t="327" it="0" lt="327" ts="1470664308439" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-1" dt="text" by="1138" ng="5" na="5"/>
+<httpSample t="86" it="0" lt="85" ts="1470664308774" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="498" it="0" lt="498" ts="1470664308364" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="147" it="0" lt="146" ts="1470664308761" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="108" it="0" lt="108" ts="1470664308908" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-2" dt="text" by="1182" ng="5" na="5"/>
+<httpSample t="459" it="0" lt="459" ts="1470664308864" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-1" dt="text" by="365" ng="5" na="5"/>
+<httpSample t="87" it="0" lt="87" ts="1470664309324" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="100" it="0" lt="100" ts="1470664309413" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-1" dt="text" by="697" ng="5" na="5"/>
+<httpSample t="1269" it="0" lt="1269" ts="1470664308244" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-3" dt="text" by="1565" ng="5" na="5"/>
+<httpSample t="277" it="0" lt="277" ts="1470664309518" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-3" dt="text" by="1565" ng="5" na="5"/>
+<httpSample t="93" it="0" lt="93" ts="1470664309800" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="897" it="0" lt="897" ts="1470664309019" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-2" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="280" it="0" lt="280" ts="1470664309897" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-3" dt="text" by="355" ng="5" na="5"/>
+<httpSample t="93" it="0" lt="93" ts="1470664310178" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="1975" it="0" lt="1975" ts="1470664308322" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-4" dt="text" by="1626" ng="5" na="5"/>
+<httpSample t="380" it="0" lt="380" ts="1470664309920" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-2" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="102" it="0" lt="102" ts="1470664310272" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-3" dt="text" by="725" ng="5" na="5"/>
+<httpSample t="85" it="0" lt="85" ts="1470664310304" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="898" it="0" lt="897" ts="1470664309517" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-1" dt="text" by="1158" ng="5" na="5"/>
+<httpSample t="354" it="0" lt="354" ts="1470664310418" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-1" dt="text" by="1158" ng="5" na="5"/>
+<httpSample t="424" it="0" lt="424" ts="1470664310390" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-2" dt="text" by="366" ng="5" na="5"/>
+<httpSample t="86" it="0" lt="86" ts="1470664310775" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="86" it="0" lt="86" ts="1470664310815" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="100" it="0" lt="100" ts="1470664310902" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-2" dt="text" by="690" ng="5" na="5"/>
+<httpSample t="789" it="0" lt="789" ts="1470664310300" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-4" dt="text" by="1626" ng="5" na="5"/>
+<httpSample t="93" it="0" lt="93" ts="1470664311090" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="444" it="0" lt="444" ts="1470664311005" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-2" dt="text" by="1522" ng="5" na="5"/>
+<httpSample t="372" it="0" lt="372" ts="1470664311188" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-4" dt="text" by="369" ng="5" na="5"/>
+<httpSample t="701" it="0" lt="701" ts="1470664310865" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-1" dt="text" by="370" ng="5" na="5"/>
+<httpSample t="94" it="0" lt="93" ts="1470664311560" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="212" it="0" lt="212" ts="1470664311450" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-2" dt="text" by="1522" ng="5" na="5"/>
+<httpSample t="125" it="0" lt="125" ts="1470664311567" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="92" it="0" lt="92" ts="1470664311663" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="118" it="0" lt="118" ts="1470664311655" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-4" dt="text" by="722" ng="5" na="5"/>
+<httpSample t="89" it="0" lt="89" ts="1470664311693" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-1" dt="text" by="685" ng="5" na="5"/>
+<httpSample t="264" it="0" lt="264" ts="1470664311757" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-2" dt="text" by="387" ng="5" na="5"/>
+<httpSample t="95" it="0" lt="94" ts="1470664312022" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="464" it="0" lt="464" ts="1470664311784" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-1" dt="text" by="1130" ng="5" na="5"/>
+<httpSample t="144" it="0" lt="144" ts="1470664312118" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="2048" it="0" lt="2048" ts="1470664310376" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-3" dt="text" by="1581" ng="5" na="5"/>
+<httpSample t="669" it="0" lt="669" ts="1470664311775" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-4" dt="text" by="1122" ng="5" na="5"/>
+<httpSample t="203" it="0" lt="202" ts="1470664312251" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-1" dt="text" by="1130" ng="5" na="5"/>
+<httpSample t="89" it="0" lt="89" ts="1470664312456" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="3868" it="0" lt="3868" ts="1470664308865" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-5" dt="text" by="1150" ng="5" na="5"/>
+<httpSample t="373" it="0" lt="373" ts="1470664312447" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-4" dt="text" by="1122" ng="5" na="5"/>
+<httpSample t="408" it="0" lt="408" ts="1470664312427" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-3" dt="text" by="1581" ng="5" na="5"/>
+<httpSample t="368" it="0" lt="368" ts="1470664312547" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-1" dt="text" by="341" ng="5" na="5"/>
+<httpSample t="101" it="0" lt="100" ts="1470664312823" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="663" it="0" lt="663" ts="1470664312264" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-2" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="92" it="0" lt="92" ts="1470664312837" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="203" it="0" lt="203" ts="1470664312736" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-5" dt="text" by="1150" ng="5" na="5"/>
+<httpSample t="87" it="0" lt="87" ts="1470664312916" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="92" it="0" lt="92" ts="1470664312941" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="98" it="0" lt="98" ts="1470664313004" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-1" dt="text" by="673" ng="5" na="5"/>
+<httpSample t="200" it="0" lt="200" ts="1470664312926" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-4" dt="text" by="355" ng="5" na="5"/>
+<httpSample t="223" it="0" lt="223" ts="1470664312929" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-2" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="286" it="0" lt="286" ts="1470664312931" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-3" dt="text" by="366" ng="5" na="5"/>
+<httpSample t="93" it="0" lt="93" ts="1470664313127" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="79" it="0" lt="79" ts="1470664313154" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="83" it="0" lt="83" ts="1470664313217" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="92" it="0" lt="92" ts="1470664313221" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-4" dt="text" by="693" ng="5" na="5"/>
+<httpSample t="287" it="0" lt="287" ts="1470664313036" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-5" dt="text" by="360" ng="5" na="5"/>
+<httpSample t="90" it="0" lt="90" ts="1470664313301" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-3" dt="text" by="674" ng="5" na="5"/>
+<httpSample t="76" it="0" lt="76" ts="1470664313324" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="85" it="0" lt="85" ts="1470664313401" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-5" dt="text" by="689" ng="5" na="5"/>
+<httpSample t="254" it="0" lt="254" ts="1470664313242" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-2" dt="text" by="360" ng="5" na="5"/>
+<httpSample t="76" it="0" lt="76" ts="1470664313497" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="233" it="0" lt="233" ts="1470664313394" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-3" dt="text" by="1134" ng="5" na="5"/>
+<httpSample t="79" it="0" lt="79" ts="1470664313574" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-2" dt="text" by="688" ng="5" na="5"/>
+<httpSample t="173" it="0" lt="173" ts="1470664313630" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-3" dt="text" by="1134" ng="5" na="5"/>
+<httpSample t="85" it="0" lt="85" ts="1470664313806" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="272" it="0" lt="272" ts="1470664313656" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-2" dt="text" by="1138" ng="5" na="5"/>
+<httpSample t="206" it="0" lt="205" ts="1470664313931" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-2" dt="text" by="1138" ng="5" na="5"/>
+<httpSample t="1079" it="0" lt="1079" ts="1470664313105" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-1" dt="text" by="1560" ng="5" na="5"/>
+<httpSample t="78" it="0" lt="78" ts="1470664314140" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="429" it="0" lt="429" ts="1470664313895" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-3" dt="text" by="356" ng="5" na="5"/>
+<httpSample t="1069" it="0" lt="1069" ts="1470664313315" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-4" dt="text" by="1620" ng="5" na="5"/>
+<httpSample t="83" it="0" lt="83" ts="1470664314325" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="253" it="0" lt="253" ts="1470664314185" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-1" dt="text" by="1560" ng="5" na="5"/>
+<httpSample t="88" it="0" lt="88" ts="1470664314409" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-3" dt="text" by="1182" ng="5" na="5"/>
+<httpSample t="77" it="0" lt="77" ts="1470664314440" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="473" it="0" lt="473" ts="1470664314221" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-2" dt="text" by="366" ng="5" na="5"/>
+<httpSample t="80" it="0" lt="80" ts="1470664314694" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="320" it="0" lt="320" ts="1470664314498" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-3" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="80" it="0" lt="79" ts="1470664314775" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-2" dt="text" by="700" ng="5" na="5"/>
+<httpSample t="474" it="0" lt="474" ts="1470664314386" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-4" dt="text" by="1620" ng="5" na="5"/>
+<httpSample t="88" it="0" lt="88" ts="1470664314862" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="1486" it="0" lt="1486" ts="1470664313489" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-5" dt="text" by="1632" ng="5" na="5"/>
+<httpSample t="275" it="0" lt="275" ts="1470664314820" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-3" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="87" it="0" lt="86" ts="1470664315097" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="355" it="0" lt="355" ts="1470664314857" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-2" dt="text" by="1565" ng="5" na="5"/>
+<httpSample t="323" it="0" lt="323" ts="1470664314953" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-4" dt="text" by="368" ng="5" na="5"/>
+<httpSample t="377" it="0" lt="377" ts="1470664314977" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-5" dt="text" by="1632" ng="5" na="5"/>
+<httpSample t="88" it="0" lt="88" ts="1470664315276" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="77" it="0" lt="77" ts="1470664315356" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="84" it="0" lt="84" ts="1470664315365" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="69" it="0" lt="69" ts="1470664315434" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-5" dt="text" by="366" ng="5" na="5"/>
+<httpSample t="371" it="0" lt="371" ts="1470664315187" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-3" dt="text" by="369" ng="5" na="5"/>
+<httpSample t="81" it="0" lt="80" ts="1470664315504" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="1065" it="0" lt="1065" ts="1470664314520" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-1" dt="text" by="355" ng="5" na="5"/>
+<httpSample t="410" it="0" lt="410" ts="1470664315214" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-2" dt="text" by="1565" ng="5" na="5"/>
+<httpSample t="83" it="0" lt="83" ts="1470664315559" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="198" it="0" lt="198" ts="1470664315450" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-4" dt="text" by="1150" ng="5" na="5"/>
+<httpSample t="71" it="0" lt="71" ts="1470664315586" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="78" it="0" lt="78" ts="1470664315585" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-5" dt="text" by="725" ng="5" na="5"/>
+<httpSample t="75" it="0" lt="75" ts="1470664315624" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="86" it="0" lt="86" ts="1470664315643" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-3" dt="text" by="697" ng="4" na="4"/>
+<httpSample t="139" it="0" lt="139" ts="1470664315658" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-1" dt="text" by="672" ng="4" na="4"/>
+<httpSample t="493" it="0" lt="493" ts="1470664315731" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-3" dt="text" by="1158" ng="4" na="4"/>
+<httpSample t="365" it="0" lt="365" ts="1470664316227" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-3" dt="text" by="1158" ng="4" na="4"/>
+<httpSample t="950" it="0" lt="950" ts="1470664315649" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-4" dt="text" by="1150" ng="4" na="4"/>
+<httpSample t="88" it="0" lt="88" ts="1470664316594" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="4" na="4"/>
+<httpSample t="85" it="0" lt="85" ts="1470664316601" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="1158" it="0" lt="1158" ts="1470664315664" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-5" dt="text" by="1581" ng="3" na="3"/>
+<httpSample t="1109" it="0" lt="1109" ts="1470664315800" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-1" dt="text" by="1626" ng="3" na="3"/>
+<httpSample t="254" it="0" lt="254" ts="1470664316687" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-4" dt="text" by="365" ng="3" na="3"/>
+<httpSample t="85" it="0" lt="85" ts="1470664316942" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="89" it="0" lt="89" ts="1470664317028" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-4" dt="text" by="690" ng="3" na="3"/>
+<httpSample t="368" it="0" lt="368" ts="1470664316825" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-5" dt="text" by="1581" ng="3" na="3"/>
+<httpSample t="353" it="0" lt="352" ts="1470664316912" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-1" dt="text" by="1626" ng="3" na="3"/>
+<httpSample t="86" it="0" lt="86" ts="1470664317195" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="77" it="0" lt="77" ts="1470664317267" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="463" it="0" lt="463" ts="1470664317120" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-4" dt="text" by="1522" ng="2" na="2"/>
+<httpSample t="321" it="0" lt="321" ts="1470664317284" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-5" dt="text" by="366" ng="2" na="2"/>
+<httpSample t="76" it="0" lt="76" ts="1470664317606" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="2" na="2"/>
+<httpSample t="81" it="0" lt="81" ts="1470664317683" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-5" dt="text" by="685" ng="2" na="2"/>
+<httpSample t="215" it="0" lt="215" ts="1470664317585" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-4" dt="text" by="1522" ng="2" na="2"/>
+<httpSample t="82" it="0" lt="82" ts="1470664317803" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="2" na="2"/>
+<httpSample t="228" it="0" lt="228" ts="1470664317767" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-5" dt="text" by="1130" ng="1" na="1"/>
+<httpSample t="201" it="0" lt="201" ts="1470664317997" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-5" dt="text" by="1130" ng="1" na="1"/>
+<httpSample t="80" it="0" lt="80" ts="1470664318201" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="1" na="1"/>
+<httpSample t="261" it="0" lt="261" ts="1470664318284" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-5" dt="text" by="391" ng="1" na="1"/>
+<httpSample t="78" it="0" lt="78" ts="1470664318546" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="1" na="1"/>
+<httpSample t="78" it="0" lt="78" ts="1470664318624" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-5" dt="text" by="722" ng="1" na="1"/>
+<httpSample t="235" it="0" lt="235" ts="1470664318705" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-5" dt="text" by="1122" ng="1" na="1"/>
+<httpSample t="245" it="0" lt="244" ts="1470664318943" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-5" dt="text" by="1122" ng="1" na="1"/>
+<httpSample t="79" it="0" lt="79" ts="1470664319190" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="1" na="1"/>
+
+<httpSample t="189" it="0" lt="189" ts="1470664379851" s="true" lb="ping" rc="200" rm="OK" tn="setup 1-1" dt="text" by="244" ng="1" na="1"/>
+<sample t="34628" it="0" lt="9505" ts="1470664380063" s="true" lb="symbols" rc="200" rm="OK" tn="setup 1-1" dt="text" by="563" ng="1" na="1"/>
+<httpSample t="391" it="0" lt="391" ts="1470664414787" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-1" dt="text" by="371" ng="2" na="2"/>
+<httpSample t="83" it="0" lt="82" ts="1470664415180" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="84" it="0" lt="84" ts="1470664415264" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-1" dt="text" by="688" ng="3" na="3"/>
+<httpSample t="408" it="0" lt="408" ts="1470664415005" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-2" dt="text" by="345" ng="3" na="3"/>
+<httpSample t="121" it="0" lt="121" ts="1470664415415" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="4" na="4"/>
+<httpSample t="217" it="0" lt="217" ts="1470664415356" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-1" dt="text" by="1138" ng="4" na="4"/>
+<httpSample t="84" it="0" lt="84" ts="1470664415538" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-2" dt="text" by="1182" ng="4" na="4"/>
+<httpSample t="225" it="0" lt="225" ts="1470664415578" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-1" dt="text" by="1138" ng="5" na="5"/>
+<httpSample t="398" it="0" lt="398" ts="1470664415425" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-4" dt="text" by="368" ng="5" na="5"/>
+<httpSample t="76" it="0" lt="76" ts="1470664415824" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="124" it="0" lt="124" ts="1470664415806" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="307" it="0" lt="307" ts="1470664415627" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-2" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="82" it="0" lt="81" ts="1470664415902" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-4" dt="text" by="672" ng="5" na="5"/>
+<httpSample t="468" it="0" lt="468" ts="1470664415636" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-5" dt="text" by="360" ng="5" na="5"/>
+<httpSample t="90" it="0" lt="90" ts="1470664416106" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="312" it="0" lt="312" ts="1470664415938" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-2" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="88" it="0" lt="88" ts="1470664416198" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="356" it="0" lt="356" ts="1470664415939" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-1" dt="text" by="337" ng="5" na="5"/>
+<httpSample t="78" it="0" lt="78" ts="1470664416254" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="75" it="0" lt="75" ts="1470664416297" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="424" it="0" lt="424" ts="1470664415986" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-4" dt="text" by="1626" ng="5" na="5"/>
+<httpSample t="85" it="0" lt="85" ts="1470664416373" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-1" dt="text" by="697" ng="5" na="5"/>
+<httpSample t="333" it="0" lt="333" ts="1470664416336" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-2" dt="text" by="370" ng="5" na="5"/>
+<httpSample t="78" it="0" lt="78" ts="1470664416670" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="78" it="0" lt="78" ts="1470664416749" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-2" dt="text" by="725" ng="5" na="5"/>
+<httpSample t="409" it="0" lt="409" ts="1470664416461" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-1" dt="text" by="1158" ng="5" na="5"/>
+<httpSample t="698" it="0" lt="698" ts="1470664416290" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-5" dt="text" by="1150" ng="5" na="5"/>
+<httpSample t="691" it="0" lt="691" ts="1470664416413" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-4" dt="text" by="1626" ng="5" na="5"/>
+<httpSample t="261" it="0" lt="261" ts="1470664416874" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-1" dt="text" by="1158" ng="5" na="5"/>
+<httpSample t="188" it="0" lt="188" ts="1470664416992" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-5" dt="text" by="1150" ng="5" na="5"/>
+<httpSample t="78" it="0" lt="78" ts="1470664417108" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="78" it="0" lt="78" ts="1470664417139" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="82" it="0" lt="82" ts="1470664417182" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="509" it="0" lt="509" ts="1470664416831" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-2" dt="text" by="1581" ng="5" na="5"/>
+<httpSample t="192" it="0" lt="192" ts="1470664417187" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-4" dt="text" by="330" ng="5" na="5"/>
+<httpSample t="181" it="0" lt="181" ts="1470664417268" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-5" dt="text" by="333" ng="5" na="5"/>
+<httpSample t="89" it="0" lt="89" ts="1470664417379" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="89" it="0" lt="89" ts="1470664417450" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="77" it="0" lt="77" ts="1470664417470" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-4" dt="text" by="690" ng="5" na="5"/>
+<httpSample t="341" it="0" lt="341" ts="1470664417218" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-1" dt="text" by="343" ng="5" na="5"/>
+<httpSample t="87" it="0" lt="87" ts="1470664417540" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-5" dt="text" by="722" ng="5" na="5"/>
+<httpSample t="76" it="0" lt="75" ts="1470664417561" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="375" it="0" lt="375" ts="1470664417341" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-2" dt="text" by="1581" ng="5" na="5"/>
+<httpSample t="107" it="0" lt="107" ts="1470664417638" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-1" dt="text" by="685" ng="5" na="5"/>
+<httpSample t="209" it="0" lt="209" ts="1470664417550" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-4" dt="text" by="1522" ng="5" na="5"/>
+<httpSample t="77" it="0" lt="77" ts="1470664417719" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="294" it="0" lt="294" ts="1470664417630" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-5" dt="text" by="1122" ng="5" na="5"/>
+<httpSample t="207" it="0" lt="207" ts="1470664417747" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-1" dt="text" by="1130" ng="5" na="5"/>
+<httpSample t="194" it="0" lt="194" ts="1470664417762" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-4" dt="text" by="1522" ng="5" na="5"/>
+<httpSample t="78" it="0" lt="78" ts="1470664417958" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="281" it="0" lt="281" ts="1470664417798" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-2" dt="text" by="356" ng="5" na="5"/>
+<httpSample t="77" it="0" lt="77" ts="1470664418079" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="238" it="0" lt="238" ts="1470664417928" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-5" dt="text" by="1122" ng="5" na="5"/>
+<httpSample t="216" it="0" lt="216" ts="1470664417956" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-1" dt="text" by="1130" ng="5" na="5"/>
+<httpSample t="82" it="0" lt="82" ts="1470664418158" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="76" it="0" lt="76" ts="1470664418173" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="83" it="0" lt="82" ts="1470664418168" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="456" it="0" lt="456" ts="1470664418037" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-4" dt="text" by="359" ng="5" na="5"/>
+<httpSample t="300" it="0" lt="300" ts="1470664418252" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-5" dt="text" by="348" ng="5" na="5"/>
+<httpSample t="77" it="0" lt="77" ts="1470664418493" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="83" it="0" lt="83" ts="1470664418570" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-4" dt="text" by="673" ng="5" na="5"/>
+<httpSample t="412" it="0" lt="411" ts="1470664418244" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-2" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="127" it="0" lt="127" ts="1470664418552" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="95" it="0" lt="95" ts="1470664418680" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-5" dt="text" by="674" ng="5" na="5"/>
+<httpSample t="241" it="0" lt="241" ts="1470664418655" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-4" dt="text" by="1560" ng="5" na="5"/>
+<httpSample t="166" it="0" lt="166" ts="1470664418775" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-5" dt="text" by="1134" ng="5" na="5"/>
+<httpSample t="317" it="0" lt="317" ts="1470664418656" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-2" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="77" it="0" lt="77" ts="1470664418976" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="166" it="0" lt="166" ts="1470664418944" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-5" dt="text" by="1134" ng="5" na="5"/>
+<httpSample t="87" it="0" lt="86" ts="1470664419113" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="357" it="0" lt="357" ts="1470664418899" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-4" dt="text" by="1560" ng="5" na="5"/>
+<httpSample t="259" it="0" lt="256" ts="1470664419057" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-2" dt="text" by="343" ng="5" na="5"/>
+<httpSample t="76" it="0" lt="76" ts="1470664419258" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="76" it="0" lt="76" ts="1470664419317" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="89" it="0" lt="89" ts="1470664419394" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-2" dt="text" by="689" ng="5" na="5"/>
+<httpSample t="272" it="0" lt="272" ts="1470664419338" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-4" dt="text" by="365" ng="5" na="5"/>
+<httpSample t="78" it="0" lt="78" ts="1470664419611" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="83" it="0" lt="83" ts="1470664419690" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-4" dt="text" by="1182" ng="5" na="5"/>
+<httpSample t="219" it="0" lt="219" ts="1470664419776" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-4" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="237" it="0" lt="236" ts="1470664419998" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-4" dt="text" by="1618" ng="5" na="5"/>
+<httpSample t="763" it="0" lt="763" ts="1470664419486" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-2" dt="text" by="1632" ng="5" na="5"/>
+<httpSample t="80" it="0" lt="80" ts="1470664420237" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="332" it="0" lt="332" ts="1470664420320" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-4" dt="text" by="345" ng="5" na="5"/>
+<httpSample t="77" it="0" lt="77" ts="1470664420653" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="80" it="0" lt="79" ts="1470664420731" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-4" dt="text" by="700" ng="5" na="5"/>
+<httpSample t="602" it="0" lt="602" ts="1470664420252" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-2" dt="text" by="1632" ng="5" na="5"/>
+<httpSample t="79" it="0" lt="79" ts="1470664420857" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="278" it="0" lt="278" ts="1470664420813" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-4" dt="text" by="1565" ng="5" na="5"/>
+<httpSample t="245" it="0" lt="244" ts="1470664421094" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-4" dt="text" by="1565" ng="5" na="5"/>
+<httpSample t="488" it="0" lt="488" ts="1470664420939" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-2" dt="text" by="336" ng="5" na="5"/>
+<httpSample t="102" it="0" lt="102" ts="1470664421341" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-4" dt="text" by="227" ng="5" na="5"/>
+<httpSample t="75" it="0" lt="75" ts="1470664421428" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="4" na="4"/>
+<httpSample t="78" it="0" lt="78" ts="1470664421504" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-2" dt="text" by="672" ng="4" na="4"/>
+<httpSample t="357" it="0" lt="357" ts="1470664421585" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-2" dt="text" by="1626" ng="4" na="4"/>
+<httpSample t="354" it="0" lt="354" ts="1470664421945" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-2" dt="text" by="1626" ng="4" na="4"/>
+<httpSample t="82" it="0" lt="82" ts="1470664422302" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-2" dt="text" by="227" ng="4" na="4"/>
+<httpSample t="13915" it="0" lt="13914" ts="1470664418252" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-1" dt="text" by="339" ng="3" na="3"/>
+<httpSample t="12962" it="0" lt="12962" ts="1470664419214" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-5" dt="text" by="320" ng="3" na="3"/>
+<httpSample t="16961" it="0" lt="16961" ts="1470664415215" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-3" dt="text" by="353" ng="3" na="3"/>
+<httpSample t="74" it="0" lt="74" ts="1470664432168" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="81" it="0" lt="81" ts="1470664432177" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="83" it="0" lt="83" ts="1470664432177" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="80" it="0" lt="80" ts="1470664432243" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-1" dt="text" by="693" ng="3" na="3"/>
+<httpSample t="81" it="0" lt="81" ts="1470664432261" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-3" dt="text" by="700" ng="3" na="3"/>
+<httpSample t="84" it="0" lt="84" ts="1470664432259" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-5" dt="text" by="688" ng="3" na="3"/>
+<httpSample t="239" it="0" lt="239" ts="1470664432345" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-5" dt="text" by="1138" ng="3" na="3"/>
+<httpSample t="248" it="0" lt="248" ts="1470664432345" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-3" dt="text" by="1565" ng="3" na="3"/>
+<httpSample t="204" it="0" lt="204" ts="1470664432585" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-5" dt="text" by="1138" ng="3" na="3"/>
+<httpSample t="558" it="0" lt="558" ts="1470664432326" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-1" dt="text" by="1620" ng="3" na="3"/>
+<httpSample t="122" it="0" lt="121" ts="1470664432792" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="270" it="0" lt="269" ts="1470664432916" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-5" dt="text" by="355" ng="3" na="3"/>
+<httpSample t="592" it="0" lt="591" ts="1470664432594" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-3" dt="text" by="1565" ng="3" na="3"/>
+<httpSample t="331" it="0" lt="331" ts="1470664432886" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-1" dt="text" by="1620" ng="3" na="3"/>
+<httpSample t="86" it="0" lt="86" ts="1470664433187" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="88" it="0" lt="88" ts="1470664433188" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="77" it="0" lt="77" ts="1470664433220" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="85" it="0" lt="85" ts="1470664433274" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="191" it="0" lt="191" ts="1470664433362" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-5" dt="text" by="1150" ng="3" na="3"/>
+<httpSample t="273" it="0" lt="273" ts="1470664433298" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-1" dt="text" by="355" ng="3" na="3"/>
+<httpSample t="77" it="0" lt="77" ts="1470664433572" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="79" it="0" lt="79" ts="1470664433650" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-1" dt="text" by="725" ng="3" na="3"/>
+<httpSample t="188" it="0" lt="188" ts="1470664433556" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-5" dt="text" by="1150" ng="3" na="3"/>
+<httpSample t="83" it="0" lt="83" ts="1470664433746" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-5" dt="text" by="227" ng="3" na="3"/>
+<httpSample t="325" it="0" lt="324" ts="1470664433731" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-1" dt="text" by="1581" ng="2" na="2"/>
+<httpSample t="315" it="0" lt="315" ts="1470664434058" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-1" dt="text" by="1581" ng="2" na="2"/>
+<httpSample t="80" it="0" lt="80" ts="1470664434376" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-1" dt="text" by="227" ng="2" na="2"/>
+<httpSample t="2511" it="0" lt="2511" ts="1470664433277" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-3" dt="text" by="324" ng="1" na="1"/>
+<httpSample t="83" it="0" lt="83" ts="1470664435788" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="1" na="1"/>
+<httpSample t="84" it="0" lt="84" ts="1470664435872" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-3" dt="text" by="697" ng="1" na="1"/>
+<httpSample t="282" it="0" lt="281" ts="1470664435958" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-3" dt="text" by="1158" ng="1" na="1"/>
+<httpSample t="335" it="0" lt="335" ts="1470664436242" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-3" dt="text" by="1158" ng="1" na="1"/>
+<httpSample t="87" it="0" lt="87" ts="1470664436579" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="1" na="1"/>
+<httpSample t="290" it="0" lt="290" ts="1470664436669" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-3" dt="text" by="357" ng="1" na="1"/>
+<httpSample t="83" it="0" lt="83" ts="1470664436960" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="1" na="1"/>
+<httpSample t="86" it="0" lt="86" ts="1470664437044" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-3" dt="text" by="690" ng="1" na="1"/>
+<httpSample t="214" it="0" lt="213" ts="1470664437133" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-3" dt="text" by="1522" ng="1" na="1"/>
+<httpSample t="217" it="0" lt="217" ts="1470664437349" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-3" dt="text" by="1522" ng="1" na="1"/>
+<httpSample t="86" it="0" lt="86" ts="1470664437568" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="1" na="1"/>
+<httpSample t="315" it="0" lt="315" ts="1470664437657" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-3" dt="text" by="360" ng="1" na="1"/>
+<httpSample t="85" it="0" lt="85" ts="1470664437973" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="1" na="1"/>
+<httpSample t="88" it="0" lt="88" ts="1470664438059" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-3" dt="text" by="685" ng="1" na="1"/>
+<httpSample t="206" it="0" lt="206" ts="1470664438150" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-3" dt="text" by="1130" ng="1" na="1"/>
+<httpSample t="215" it="0" lt="215" ts="1470664438358" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-3" dt="text" by="1130" ng="1" na="1"/>
+<httpSample t="91" it="0" lt="90" ts="1470664438575" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="1" na="1"/>
+<httpSample t="292" it="0" lt="292" ts="1470664438668" s="true" lb="SYMBOL" rc="200" rm="OK" tn="request 1-3" dt="text" by="328" ng="1" na="1"/>
+<httpSample t="86" it="0" lt="86" ts="1470664438961" s="true" lb="ACTIVITY" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="1" na="1"/>
+<httpSample t="99" it="0" lt="99" ts="1470664439048" s="true" lb="ARRANGEMENTS" rc="200" rm="OK" tn="request 1-3" dt="text" by="722" ng="1" na="1"/>
+<httpSample t="241" it="0" lt="241" ts="1470664439149" s="true" lb="TAX SNAPSHOT ALL" rc="200" rm="OK" tn="request 1-3" dt="text" by="1122" ng="1" na="1"/>
+<httpSample t="251" it="0" lt="251" ts="1470664439392" s="true" lb="TAX SNAPSHOT INCOME" rc="200" rm="OK" tn="request 1-3" dt="text" by="1122" ng="1" na="1"/>
+<httpSample t="122" it="0" lt="122" ts="1470664439646" s="true" lb="PORTFOLIO" rc="200" rm="OK" tn="request 1-3" dt="text" by="227" ng="1" na="1"/>
+
+</testResults>

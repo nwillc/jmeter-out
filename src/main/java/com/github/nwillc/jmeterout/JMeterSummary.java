@@ -1,12 +1,10 @@
 package com.github.nwillc.jmeterout;
 
 import java.io.*;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static com.github.nwillc.jmeterout.Stats.avg;
-import static com.github.nwillc.jmeterout.Stats.percentile;
 
 /*
             Copyright (c) 2016, nwillc@gmail.com
@@ -28,20 +26,22 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 public class JMeterSummary {
     private enum Group {
         ALL,
-        T,
-        LT,
-        TS,
-        S,
-        LB,
-        RC,
-        RM,
-        TN,
-        DT,
-        BY
+        t,
+        it,
+        lt,
+        ts,
+        s,
+        lb,
+        rc,
+        rm,
+        tn,
+        dt,
+        by,
+        ng,
+        na
     }
 
-    private static final int DEFAULT_MILLIS_BUCKET = 500;
-    private final File _jmeterOutput;
+    private final File input;
 
     public static void main(String args[]) {
         try {
@@ -70,7 +70,7 @@ public class JMeterSummary {
                 continue;
             }
 
-            stringBuilder.append(group.name().toLowerCase());
+            stringBuilder.append(group.name());
             stringBuilder.append("=\"([^\"]*)\"\\s*");
         }
 
@@ -79,33 +79,31 @@ public class JMeterSummary {
     }
 
     private static void printUsage() {
-        System.out.println("Usage: " + JMeterSummary.class.getName() + " <JMeter Ouput File> [Millis Per Bucket]");
-        System.out.println("  (By default hits are grouped in " + DEFAULT_MILLIS_BUCKET + " millis/bucket.)");
+        System.out.println("Usage: " + JMeterSummary.class.getName() + " <JMeter Ouput File>");
     }
 
     private JMeterSummary(File inJmeterOutput) {
-        super();
-        _jmeterOutput = inJmeterOutput;
+        input = inJmeterOutput;
     }
 
     private void run() throws IOException {
-        Map<String, UrlEntry> urlMap = new HashMap<>();
+        Map<String, RequestEntry> requestMap = new HashMap<>();
 
         Pattern p = Pattern.compile(createRegex());
 
-        try (BufferedReader inStream = new BufferedReader(new FileReader(_jmeterOutput))) {
+        try (BufferedReader inStream = new BufferedReader(new FileReader(input))) {
             String line = inStream.readLine();
             while (line != null) {
-                Matcher m = p.matcher(line);
+                Matcher matched = p.matcher(line);
 
-                if (m.find()) {
-                    String url = m.group(Group.LB.ordinal());
-                    UrlEntry urlEntry = urlMap.get(url);
-                    if (urlEntry == null) {
-                        urlEntry = new UrlEntry(url);
-                        urlMap.put(url, urlEntry);
+                if (matched.find()) {
+                    String request = matched.group(Group.lb.ordinal());
+                    RequestEntry requestEntry = requestMap.get(request);
+                    if (requestEntry == null) {
+                        requestEntry = new RequestEntry(request);
+                        requestMap.put(request, requestEntry);
                     }
-                    add(m, urlEntry);
+                    add(matched, requestEntry);
                 }
 
                 line = inStream.readLine();
@@ -113,24 +111,23 @@ public class JMeterSummary {
 
         }
 
-        if (urlMap.isEmpty()) {
+        if (requestMap.isEmpty()) {
             System.out.println("No results found!");
             return;
         }
 
-        System.out.println("request, cnt, min, max, avg, 95th, failures");
+        System.out.println("request, cnt, min, max, avg, 95th, failures, threads");
 
-        urlMap.values().forEach(System.out::println);
+        requestMap.values().forEach(System.out::println);
     }
 
-    private void add(Matcher inM, UrlEntry inTotal) {
-        int time = Integer.parseInt(inM.group(Group.T.ordinal()));
-        inTotal.times.add(time);
-        if (!inM.group(Group.S.ordinal()).equalsIgnoreCase("true")) {
-            inTotal.failures++;
+    private void add(Matcher matched, RequestEntry requestEntry) {
+        requestEntry.times.add(Integer.parseInt(matched.group(Group.t.ordinal())));
+        requestEntry.threads = Math.max(Integer.parseInt(matched.group(Group.ng.ordinal())), requestEntry.threads);
+        if (!matched.group(Group.s.ordinal()).equalsIgnoreCase("true")) {
+            requestEntry.failures++;
         }
     }
-
 
 
 }

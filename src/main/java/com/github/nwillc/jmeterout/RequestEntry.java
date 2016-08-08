@@ -11,12 +11,13 @@ import java.util.List;
 import static com.github.nwillc.jmeterout.Stats.avg;
 import static com.github.nwillc.jmeterout.Stats.percentile;
 
-class UrlEntry {
+class RequestEntry {
     private final String url;
     int failures = 0;
+    int threads = 0;
     List<Integer> times = new LinkedList<>();
 
-    UrlEntry(String url) {
+    RequestEntry(String url) {
         this.url = url;
     }
 
@@ -29,6 +30,7 @@ class UrlEntry {
                 times.get(times.size() - 1) + ", " +
                 avg(times) + ", " +
                 percentile(times, 95) + ", " +
-                failures;
+                failures + ", " +
+                threads;
     }
 }
