@@ -25,9 +25,6 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
  */
 
-/**
- * @author Andres.Galeano@Versatile.com
- */
 public class JMeterSummary {
     private enum Group {
         ALL,
@@ -44,40 +41,21 @@ public class JMeterSummary {
     }
 
     private static final int DEFAULT_MILLIS_BUCKET = 500;
-
     private final File _jmeterOutput;
-    private final int _millisPerBucket;
 
-    /**
-     */
     public static void main(String args[]) {
         try {
-            int millisPerBucket;
-
-            int argIndex = 0;
-
             if (args.length < 1) {
                 printUsage();
                 throw new IllegalArgumentException("Must provide a JMeter output file as an argument.");
             }
 
-            String arg0 = args[argIndex++];
-            if (arg0.contains("help")) {
-                printUsage();
-                return;
-            }
-
-            File outputFile = new File(arg0);
+            File outputFile = new File(args[0]);
             if (!outputFile.exists()) {
                 throw new FileNotFoundException("File '" + outputFile + "' does not exist.");
             }
 
-            if (args.length > argIndex) {
-                millisPerBucket = Integer.parseInt(args[argIndex + 1]);
-            } else {
-                millisPerBucket = DEFAULT_MILLIS_BUCKET;
-            }
-            JMeterSummary instance = new JMeterSummary(outputFile, millisPerBucket);
+            JMeterSummary instance = new JMeterSummary(outputFile);
             instance.run();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -100,23 +78,16 @@ public class JMeterSummary {
         return stringBuilder.toString();
     }
 
-    /**
-     */
     private static void printUsage() {
         System.out.println("Usage: " + JMeterSummary.class.getName() + " <JMeter Ouput File> [Millis Per Bucket]");
         System.out.println("  (By default hits are grouped in " + DEFAULT_MILLIS_BUCKET + " millis/bucket.)");
     }
 
-    /**
-     */
-    private JMeterSummary(File inJmeterOutput, int inMillisPerBucket) {
+    private JMeterSummary(File inJmeterOutput) {
         super();
         _jmeterOutput = inJmeterOutput;
-        _millisPerBucket = inMillisPerBucket;
     }
 
-    /**
-     */
     private void run() throws IOException {
         Map<String, UrlEntry> urlMap = new HashMap<>();
 
@@ -152,8 +123,6 @@ public class JMeterSummary {
         urlMap.values().forEach(System.out::println);
     }
 
-    /**
-     */
     private void add(Matcher inM, UrlEntry inTotal) {
         int time = Integer.parseInt(inM.group(Group.T.ordinal()));
         inTotal.times.add(time);
@@ -162,30 +131,6 @@ public class JMeterSummary {
         }
     }
 
-    /**
-     * @author Andres.Galeano@Versatile.com
-     */
-    private class UrlEntry {
-        final String url;
-        int failures = 0;
-        List<Integer> times = new LinkedList<>();
 
-        UrlEntry(String url) {
-            this.url = url;
-        }
-
-        @Override
-        public String toString() {
-            Collections.sort(times);
-            return url + ", " +
-                    times.size() + ", " +
-                    times.get(0) + ", " +
-                    times.get(times.size() - 1) + ", " +
-                    avg(times) + ", " +
-                    percentile(times, 95) + ", " +
-                    failures;
-
-        }
-    }
 
 }

@@ -6,10 +6,10 @@ package com.github.nwillc.jmeterout;
 
 import java.util.List;
 
-public final class Stats {
+final class Stats {
     private Stats() {};
 
-    public static Integer avg(List<Integer> values) {
+    static Integer avg(List<Integer> values) {
         long total = 0;
         for (Integer time : values) {
             total += time;
@@ -17,7 +17,7 @@ public final class Stats {
         return (int)(total / values.size());
     }
 
-    public static Integer percentile(List<Integer> values, int percent) {
+    static Integer percentile(List<Integer> values, int percent) {
         double index = (percent / 100.0f) * values.size();
 
         int pos = (int)index;

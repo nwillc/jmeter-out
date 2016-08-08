@@ -1,4 +1,4 @@
 # jmeter-out
 
-Java designed to post process JMeter output. Based on example by Andres.Galeano@Versatile.com
+Java designed to post process JMeter output. Based originally on example by Andres.Galeano@Versatile.com.
 
