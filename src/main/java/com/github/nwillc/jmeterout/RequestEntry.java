@@ -30,7 +30,7 @@ class RequestEntry {
     private final String url;
     int failures = 0;
     int threads = 0;
-    List<Integer> times = new LinkedList<>();
+    final List<Integer> times = new LinkedList<>();
 
     RequestEntry(String url) {
         this.url = url;
