@@ -7,7 +7,7 @@ package com.github.nwillc.jmeterout;
 import java.util.List;
 
 final class Stats {
-    private Stats() {};
+    private Stats() {}
 
     static Integer avg(List<Integer> values) {
         long total = 0;
