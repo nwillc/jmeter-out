@@ -19,34 +19,55 @@
 
 package com.github.nwillc.jmeterout;
 
+
+import org.apache.commons.math3.stat.descriptive.moment.Mean;
+import org.apache.commons.math3.stat.descriptive.moment.StandardDeviation;
+import org.apache.commons.math3.stat.descriptive.rank.Max;
+import org.apache.commons.math3.stat.descriptive.rank.Min;
+import org.apache.commons.math3.stat.descriptive.rank.Percentile;
+import org.apache.commons.math3.util.Precision;
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import static com.github.nwillc.jmeterout.Stats.avg;
-import static com.github.nwillc.jmeterout.Stats.percentile;
+import static org.apache.commons.math3.util.Precision.round;
 
 class RequestEntry {
     private static final String COMMA = ", ";
     private final String url;
     int failures = 0;
     int threads = 0;
-    final List<Integer> times = new LinkedList<>();
+    final List<Double> times = new LinkedList<>();
+    private Max max = new Max();
+    private Min min = new Min();
+    private Mean mean = new Mean();
+    private Percentile percentile = new Percentile();
+    private StandardDeviation std = new StandardDeviation();
 
     RequestEntry(String url) {
         this.url = url;
     }
 
+    private double[] toArray() {
+        final double[] doubles = new double[times.size()];
+        for (int i = 0; i < times.size(); i++) {
+            doubles[i] = times.get(i);
+        }
+        return doubles;
+    }
+
     @Override
     public String toString() {
-        Collections.sort(times);
+        final double[] doubles = toArray();
         return new StringBuilder().append(url).append(COMMA)
                 .append(threads).append(COMMA)
-                .append(times.size()).append(COMMA)
-                .append(times.get(0)).append(", ")
-                .append(times.get(times.size() - 1)).append(COMMA)
-                .append(avg(times)).append(COMMA)
-                .append(percentile(times, 95)).append(COMMA)
+                .append(doubles.length).append(COMMA)
+                .append((int) min.evaluate(doubles, 0, doubles.length)).append(COMMA)
+                .append((int) max.evaluate(doubles, 0, doubles.length)).append(COMMA)
+                .append((int) mean.evaluate(doubles, 0, doubles.length)).append(COMMA)
+                .append(round(std.evaluate(doubles,0, doubles.length),3)).append(COMMA)
+                .append((int) percentile.evaluate(doubles, 95.0)).append(COMMA)
                 .append(failures).toString();
     }
 }

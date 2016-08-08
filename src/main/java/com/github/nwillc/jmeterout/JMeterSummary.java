@@ -116,13 +116,13 @@ public class JMeterSummary {
             return;
         }
 
-        System.out.println("Request, Threads, Tot Req, Min, Max, Avg, 95th, Errors");
+        System.out.println("Request, Threads, Tot Req, Min, Max, Avg, Std, 95th, Errors");
 
         requestMap.values().forEach(System.out::println);
     }
 
     private void add(Matcher matched, RequestEntry requestEntry) {
-        requestEntry.times.add(Integer.parseInt(matched.group(Group.t.ordinal())));
+        requestEntry.times.add(Double.parseDouble(matched.group(Group.t.ordinal())));
         requestEntry.threads = Math.max(Integer.parseInt(matched.group(Group.ng.ordinal())), requestEntry.threads);
         if (!matched.group(Group.s.ordinal()).equalsIgnoreCase("true")) {
             requestEntry.failures++;
