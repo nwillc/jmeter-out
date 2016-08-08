@@ -27,6 +27,7 @@ import static com.github.nwillc.jmeterout.Stats.avg;
 import static com.github.nwillc.jmeterout.Stats.percentile;
 
 class RequestEntry {
+    private static final String COMMA = ", ";
     private final String url;
     int failures = 0;
     int threads = 0;
@@ -39,13 +40,13 @@ class RequestEntry {
     @Override
     public String toString() {
         Collections.sort(times);
-        return new StringBuilder().append(url).append(", ")
-                .append(times.size()).append(", ")
+        return new StringBuilder().append(url).append(COMMA)
+                .append(times.size()).append(COMMA)
                 .append(times.get(0)).append(", ")
-                .append(times.get(times.size() - 1)).append(", ")
-                .append(avg(times)).append(", ")
-                .append(percentile(times, 95)).append(", ")
-                .append(failures).append(", ")
+                .append(times.get(times.size() - 1)).append(COMMA)
+                .append(avg(times)).append(COMMA)
+                .append(percentile(times, 95)).append(COMMA)
+                .append(failures).append(COMMA)
                 .append(threads).toString();
     }
 }
