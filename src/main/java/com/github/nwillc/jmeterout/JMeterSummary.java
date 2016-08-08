@@ -1,12 +1,12 @@
 package com.github.nwillc.jmeterout;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.concurrent.TimeUnit;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static com.github.nwillc.jmeterout.Stats.avg;
+import static com.github.nwillc.jmeterout.Stats.percentile;
 
 /*
             Copyright (c) 2016, nwillc@gmail.com
@@ -73,7 +73,7 @@ public class JMeterSummary {
             }
 
             if (args.length > argIndex) {
-                millisPerBucket = Integer.parseInt(args[argIndex++]);
+                millisPerBucket = Integer.parseInt(args[argIndex + 1]);
             } else {
                 millisPerBucket = DEFAULT_MILLIS_BUCKET;
             }
@@ -118,10 +118,9 @@ public class JMeterSummary {
     /**
      */
     private void run() throws IOException {
-        Map<String, Totals> totalUrlMap = new HashMap<>(); // key = url, value = total
+        Map<String, UrlEntry> urlMap = new HashMap<>();
 
         Pattern p = Pattern.compile(createRegex());
-
 
         try (BufferedReader inStream = new BufferedReader(new FileReader(_jmeterOutput))) {
             String line = inStream.readLine();
@@ -130,12 +129,12 @@ public class JMeterSummary {
 
                 if (m.find()) {
                     String url = m.group(Group.LB.ordinal());
-                    Totals urlTotals = totalUrlMap.get(url);
-                    if (urlTotals == null) {
-                        urlTotals = new Totals(url);
-                        totalUrlMap.put(url, urlTotals);
+                    UrlEntry urlEntry = urlMap.get(url);
+                    if (urlEntry == null) {
+                        urlEntry = new UrlEntry(url);
+                        urlMap.put(url, urlEntry);
                     }
-                    add(m, urlTotals);
+                    add(m, urlEntry);
                 }
 
                 line = inStream.readLine();
@@ -143,41 +142,21 @@ public class JMeterSummary {
 
         }
 
-        if (totalUrlMap.isEmpty()) {
+        if (urlMap.isEmpty()) {
             System.out.println("No results found!");
             return;
         }
 
-        System.out.println("url, cnt, avg, max, min, failures");
+        System.out.println("request, cnt, min, max, avg, 95th, failures");
 
-        totalUrlMap.values().forEach(System.out::println);
+        urlMap.values().forEach(System.out::println);
     }
 
     /**
      */
-    private void add(Matcher inM, Totals inTotal) {
-        inTotal.count++;
-        long timeStamp = Long.parseLong(inM.group(Group.TS.ordinal()));
-        inTotal.last_ts = Math.max(inTotal.last_ts, timeStamp);
-        inTotal.first_ts = Math.min(inTotal.first_ts, timeStamp);
-
+    private void add(Matcher inM, UrlEntry inTotal) {
         int time = Integer.parseInt(inM.group(Group.T.ordinal()));
-        inTotal.total_t += time;
-        inTotal.max_t = Math.max(inTotal.max_t, time);
-        inTotal.min_t = Math.min(inTotal.min_t, time);
-
-        int conn = time - Integer.parseInt(inM.group(Group.LT.ordinal()));
-        inTotal.total_conn += conn;
-        inTotal.max_conn = Math.max(inTotal.max_conn, conn);
-        inTotal.min_conn = Math.min(inTotal.min_conn, conn);
-
-        String rc = inM.group(Group.RC.ordinal());
-        Integer count = inTotal.rcMap.get(rc);
-        if (count == null) {
-            count = 0;
-        }
-        inTotal.rcMap.put(rc, count + 1);
-
+        inTotal.times.add(time);
         if (!inM.group(Group.S.ordinal()).equalsIgnoreCase("true")) {
             inTotal.failures++;
         }
@@ -186,32 +165,25 @@ public class JMeterSummary {
     /**
      * @author Andres.Galeano@Versatile.com
      */
-    private class Totals {
+    private class UrlEntry {
         final String url;
-        int count = 0;
-        int total_t = 0;
-        int max_t = 0; // will choose largest
-        int min_t = Integer.MAX_VALUE; // will choose smallest
-        int total_conn = 0;
-        int max_conn = 0;  // will choose largest
-        int min_conn = Integer.MAX_VALUE; // will choose smallest
         int failures = 0;
-        long first_ts = Long.MAX_VALUE; // will choose smallest
-        long last_ts = 0;  // will choose largest
-        final Map<String, Integer> rcMap = new HashMap<>(); // key rc, value count
+        List<Integer> times = new LinkedList<>();
 
-        Totals(String url) {
+        UrlEntry(String url) {
             this.url = url;
         }
 
         @Override
         public String toString() {
-            return  url + ", "  +
-                    count + ", " +
-                            (total_t / count) + ", " +
-                            max_t + ", " +
-                            min_t + ", " +
-                            failures;
+            Collections.sort(times);
+            return url + ", " +
+                    times.size() + ", " +
+                    times.get(0) + ", " +
+                    times.get(times.size() - 1) + ", " +
+                    avg(times) + ", " +
+                    percentile(times, 95) + ", " +
+                    failures;
 
         }
     }
