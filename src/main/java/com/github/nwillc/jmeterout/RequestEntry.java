@@ -39,13 +39,13 @@ class RequestEntry {
     @Override
     public String toString() {
         Collections.sort(times);
-        return url + ", " +
-                times.size() + ", " +
-                times.get(0) + ", " +
-                times.get(times.size() - 1) + ", " +
-                avg(times) + ", " +
-                percentile(times, 95) + ", " +
-                failures + ", " +
-                threads;
+        return new StringBuilder().append(url).append(", ")
+                .append(times.size()).append(", ")
+                .append(times.get(0)).append(", ")
+                .append(times.get(times.size() - 1)).append(", ")
+                .append(avg(times)).append(", ")
+                .append(percentile(times, 95)).append(", ")
+                .append(failures).append(", ")
+                .append(threads).toString();
     }
 }
