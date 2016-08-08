@@ -46,20 +46,9 @@ public class JMeterSummary {
 		RC,
 		RM,
 		TN,
-		DT
+		DT,
+		BY
 	}
-	private static final String REG_EX =
-			"<httpSample\\s*" +
-					"t=\"([^\"]*)\"\\s*" + // Group.T
-					"lt=\"([^\"]*)\"\\s*" + // Group.LT
-					"ts=\"([^\"]*)\"\\s*" + // Group.TS
-					"s=\"([^\"]*)\"\\s*" + // Group.S
-					"lb=\"([^\"]*)\"\\s*" + // Group.LB
-					"rc=\"([^\"]*)\"\\s*" + // Group.RC
-					"rm=\"([^\"]*)\"\\s*" + // Group.RM
-					"tn=\"([^\"]*)\"\\s*" + // Group.TN
-					"dt=\"([^\"]*)\"\\s*" + // Group.DT
-					"/>";
 
 	private static final int DEFAULT_MILLIS_BUCKET = 500;
 
@@ -95,13 +84,28 @@ public class JMeterSummary {
 			} else {
 				millisPerBucket = DEFAULT_MILLIS_BUCKET;
 			}
-
 			JMeterSummary instance = new JMeterSummary(outputFile, millisPerBucket);
 			instance.run();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-	} // end [main(String[])]
+	}
+
+    private static String createRegex() {
+        StringBuilder stringBuilder = new StringBuilder("<httpSample\\s*");
+
+        for (Group group : Group.values()) {
+            if (group.equals(Group.ALL)) {
+                continue;
+            }
+
+            stringBuilder.append(group.name().toLowerCase());
+            stringBuilder.append("=\"([^\"]*)\"\\s*");
+        }
+
+        stringBuilder.append("/>");
+        return stringBuilder.toString();
+    }
 
 	/**
 	 */
@@ -124,7 +128,7 @@ public class JMeterSummary {
 		Totals totalAll = new Totals();
 		Map<String, Totals> totalUrlMap = new HashMap<>(); // key = url, value = total
 
-		Pattern p = Pattern.compile(REG_EX);
+        Pattern p = Pattern.compile(createRegex());
 
 
 		try (BufferedReader inStream = new BufferedReader(new FileReader(_jmeterOutput))) {
