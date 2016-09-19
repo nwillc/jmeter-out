@@ -18,6 +18,8 @@
 package com.github.nwillc.jmeterout;
 
 import java.io.*;
+import java.net.URL;
+import java.security.CodeSource;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -79,7 +81,18 @@ public class JMeterSummary {
     }
 
     private static void printUsage() {
-        System.out.println("Usage: " + JMeterSummary.class.getName() + " <JMeter Ouput File>");
+        String jarName = null;
+        try {
+            CodeSource src = JMeterSummary.class.getProtectionDomain().getCodeSource();
+            if (src != null) {
+                URL jar = src.getLocation();
+                String parts[] = jar.getFile().split("/");
+                jarName = parts[parts.length - 1];
+            }
+        } catch (Exception e) {
+            jarName = "jmeter-out-all.jar";
+        }
+        System.out.println("Usage: java -jar " + jarName + " <JMeter Ouput File>");
     }
 
     private JMeterSummary(File inJmeterOutput) {
