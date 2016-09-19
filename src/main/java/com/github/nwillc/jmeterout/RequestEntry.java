@@ -58,14 +58,14 @@ class RequestEntry {
     @Override
     public String toString() {
         final double[] doubles = toArray();
-        return new StringBuilder().append(url).append(COMMA)
-                .append(threads).append(COMMA)
-                .append(doubles.length).append(COMMA)
-                .append((int) min.evaluate(doubles, 0, doubles.length)).append(COMMA)
-                .append((int) max.evaluate(doubles, 0, doubles.length)).append(COMMA)
-                .append((int) mean.evaluate(doubles, 0, doubles.length)).append(COMMA)
-                .append(round(std.evaluate(doubles, 0, doubles.length), 3)).append(COMMA)
-                .append((int) percentile.evaluate(doubles, 95.0)).append(COMMA)
-                .append(failures).toString();
+        return url + COMMA +
+                threads + COMMA +
+                doubles.length + COMMA +
+                (int) min.evaluate(doubles, 0, doubles.length) + COMMA +
+                (int) max.evaluate(doubles, 0, doubles.length) + COMMA +
+                (int) mean.evaluate(doubles, 0, doubles.length) + COMMA +
+                round(std.evaluate(doubles, 0, doubles.length), 3) + COMMA +
+                (int) percentile.evaluate(doubles, 95.0) + COMMA +
+                failures;
     }
 }

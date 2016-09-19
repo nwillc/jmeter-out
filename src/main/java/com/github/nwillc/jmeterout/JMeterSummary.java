@@ -26,6 +26,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class JMeterSummary {
+    // This enumeration correlates to the XML httpSample attributes in JMeters output.
     private enum Group {
         ALL,
         t,
@@ -64,6 +65,7 @@ public class JMeterSummary {
         }
     }
 
+    // Create a regex to match an httpSample tag from JMeter's output
     private static String createRegex() {
         StringBuilder stringBuilder = new StringBuilder("<httpSample\\s*");
 
@@ -134,6 +136,7 @@ public class JMeterSummary {
         requestMap.values().forEach(System.out::println);
     }
 
+    // Update data for a request based on pattern match data from a log line
     private void add(Matcher matched, RequestEntry requestEntry) {
         requestEntry.times.add(Double.parseDouble(matched.group(Group.t.ordinal())));
         requestEntry.threads = Math.max(Integer.parseInt(matched.group(Group.ng.ordinal())), requestEntry.threads);
