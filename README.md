@@ -1,6 +1,6 @@
 # jmeter-out
 
-Java designed to post process JMeter output. Based originally on example by Andres.Galeano@Versatile.com, but only the spirit remains.
+Java designed to post process JMeter XML log output. This code is based on an example by Andres.Galeano@Versatile.com, but only the spirit remains.
 
 ## Running
 Simply build the project and then run against a JMeter XML log.
@@ -8,7 +8,7 @@ Simply build the project and then run against a JMeter XML log.
      $ gradle build
      $ java -jar build/libs/jmeter-out-all.jar log.xml > out.csv
      
-The output will be the aggregated data, with the addition of the 95% statistic:
+The output will be the aggregated data of all the individual entries, with the addition of the 95% statistic:
 
      $ java -jar jmeter-out-all.jar out.xml
      Request, Threads, Tot Req, Min, Max, Avg, Std, 95th, Errors
